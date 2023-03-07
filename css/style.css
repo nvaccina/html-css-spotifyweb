@@ -1,5 +1,97 @@
+/*GENERAL*/
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.d-flex{
+  display: flex;
+}
+
+/*MAIN CONTAINER*/
+.main-container{
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  height: 90vh;
+}
+.container{
+  width: 100%;
+}
+
+.col-menu{
+  width: 250px;
+  height: 100%;
+  color: white;
+  background-color: black;
+}
+.logo-big{
+  width: 150px;
+  padding: 20px 0;
+  padding-left: 30px;
+}
+.logo-small{
+  width: 30px;
+  display: none;
+}
+.icon-sx{
+  padding: 0 30px;
+}
+.icon-sx ul li{
+  list-style: none;
+  padding: 10px 0;
+}
+.icon-sx ul li a{
+  text-decoration: none;
+  
+}
+.icon-big{
+  font-size: 28px;
+}
+.upgrade{
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  background-color: red;
+}
+.musica{
+  padding-top: 90px;
+}
+.generi ul{
+  justify-content: center;
+}
+.generi ul li{
+  list-style: none;
+  padding: 0 10px;
+}
+.generi ul li a {
+  text-decoration: none;
+  color: #7D7F84;
+}
+
+
+
+
+/*MENU BOTTOM*/
+.menu-bottom{
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  height: 70px;
+  background-color: #282828;
+  padding: 0 10px;
+}
+
+/*RESPONSIVE*/
+@media all and (max-width:600px){
+  .logo-big{
+    display: none;
+  }
+  .logo-small{
+    display: block;
+  }
+  .icon-sx .testo{
+    display: none;
+  }
 }
