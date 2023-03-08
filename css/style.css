@@ -43,6 +43,9 @@ h2{
 .t-12px{
   font-size: 12px;
 }
+.t-24px{
+  font-size: 24px;
+}
 .t-25px{
   font-size: 20px;
 }
@@ -54,6 +57,9 @@ h2{
 }
 .grey{
   color: #717171;
+}
+.white{
+  color: white;  
 }
 .width-20px{
   width: 20px;
@@ -71,14 +77,13 @@ h2{
   margin: 0 auto;
   overflow-y: auto;
 }
-
 .col-menu{
-  flex-shrink: 0;
-  width: 230px;
   height: 100%;
+  width: 230px;
   color: white;
   background-color: black;
 }
+
 .logo-big{
   width: 180px;
   padding: 20px 0;
@@ -103,8 +108,9 @@ h2{
 .icon-big{
   width: 30px;
 }
-.icon-sx.playlist{
+.lista{
   overflow-y: auto;
+  height: calc(100% - 30px);
 }
 .icon-sx.playlist i{
   padding: 8px;
@@ -121,8 +127,8 @@ h2{
   width: 100%;
   height: 30px;
   flex-shrink: 0;
-  padding: 0 20px;
- 
+  margin: 0 auto;
+  padding: 0 20px; 
 }
 .barra{
   width: 100%;
@@ -182,12 +188,14 @@ h2{
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  bottom: -2px;
+  bottom: -3px;
   height: 15px;
   width: 30px;
   border-bottom: 2px solid #ADFF2F;
 }
-
+.generi ul li a:hover{
+  color: white;
+}
 
 .row .col{
   width: calc(100% / 6);
@@ -237,6 +245,7 @@ h2{
 }
 .image:hover .play{
   display: block;
+  cursor: pointer;
 }
 
 
@@ -244,21 +253,77 @@ h2{
 /*MENU BOTTOM*/
 .menu-bottom{
   justify-content: space-between;
-  align-items: center;
   flex-shrink: 0;
   position: fixed;
   width: 100%;
   height: 90px;
   background-color: #282828;
   padding: 0 10px;
+  color: #868686;
+}
+.immagine{
+  width: 40px;
+}
+.immagine img{
+  width: 100%;
+}
+.icon-heart{
+  padding-left: 35px;
+  padding-right: 20px;
+}
+.pulsanti{
+  justify-content: center;
+}
+.pulsanti i,
+.dx i{
+  padding: 0 10px;
+  color: white;
+}
+.tempo{
+  padding-top: 10px;
+}
+.tempo span{
+  padding: 0 20px;
+}
+.traccia i,
+.dx i{
+  font-size: 12px;
 }
 
-
-
-
-
-
-
+.bar{
+  position: relative;
+  z-index : 1;
+  width: 400px;
+  height: 3px;
+  background-color: #5A5A5A;
+  border-radius: 5px;
+}
+.bar::before {
+  content : "";
+  position: absolute;
+  left    : 0;
+  bottom  : 0;
+  height  : 3px;
+  width   : 30%;  
+  border-bottom: 3px solid #C1C1C1;
+}
+.vol-bar{
+  position: relative;
+  z-index : 1;
+  width: 100px;
+  height: 4px;
+  background-color: #5A5A5A;
+  border-radius: 5px;
+}
+.vol-bar::before{
+  content : "";
+  position: absolute;
+  left    : 0;
+  bottom  : 0;
+  height  : 3px;
+  width   : 20%;  
+  border-bottom: 4px solid #C1C1C1;
+}
 
 
 
