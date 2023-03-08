@@ -6,9 +6,13 @@
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 h2{
   padding: 30px 20px 20px;
+}
+i:hover{
+  cursor: pointer;
 }
 .d-flex{
   display: flex;
@@ -19,21 +23,29 @@ h2{
 .f-wrap{
   flex-wrap: wrap;
 }
+/*padding*/
 .p-5px{
   padding: 5px 0;
 }
 .p-10px{
   padding: 10px 0;
 }
+.pt-10px{
+  padding-top: 10px;
+}
+.pb-10px{
+  padding-bottom: 10px;
+}
 .pb-30px{
   padding-bottom: 30px;
-}
-.pl-20px{
-  padding-left: 20px;
 }
 .pl-10px{
   padding-left: 10px;
 }
+.pl-20px{
+  padding-left: 20px;
+}
+/*font-size*/
 .t-14px{
   font-size: 14px;
 }
@@ -55,22 +67,23 @@ h2{
 .bold{
   font-weight: bold;
 }
+.width-20px{
+  width: 20px;
+}
+/*color*/
 .grey{
   color: #717171;
 }
 .white{
   color: white;  
 }
-.width-20px{
-  width: 20px;
-}
+
 /*MAIN CONTAINER*/
 .main-container{
   width: 100%;
   max-width: 1600px;
+  height: calc(100vh - 90px);
   margin: 0 auto;
-
-  height: 90vh;
 }
 .container{
   width: 100%;
@@ -83,7 +96,6 @@ h2{
   color: white;
   background-color: black;
 }
-
 .logo-big{
   width: 180px;
   padding: 20px 0;
@@ -94,41 +106,84 @@ h2{
   display: none;
 }
 .icon-sx{
-  padding-left: 20px;
+  width: 100%;
   color: #6C6C6C;
 }
+.icon-sx ul{
+  width: 100%;
+}
 .icon-sx ul li{
+  width: 100%;
   list-style: none;
   padding: 5px 0;
 }
 .icon-sx ul li a{
+  width: 100%;
   text-decoration: none;
+  padding-left: 20px;
   color: #6C6C6C;  
+}
+.border-yellow{
+  border-left: 3px solid #ADFF2F; 
+}
+.icon-sx ul li a:hover .icon-big{
+  filter: invert(0);
+}
+.icon-sx ul li a span{
+  padding-left: 5px;
 }
 .icon-big{
   width: 30px;
+  filter: invert(35%);
 }
-.lista{
-  overflow-y: auto;
-  height: calc(100% - 30px);
+h4{
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 .icon-sx.playlist i{
   padding: 8px;
   color: black;
   background-color: #808080;
 }
-.icon-sx.playlist i:hover{
+.icon-sx.playlist a:first-child:hover i{
   background-color: white;
+}
+.icon-sx a:first-child:hover .testo{
+  color: white;
 }
 .icon-sx li a:hover{
   color: white;
 }
+.testo{
+  padding-left: 5px;
+}
+.lista{
+  overflow-y: auto;
+  height: calc(100vh - 510px);
+}
+.icon-sx.playlist .lista li{
+  padding-top: 10px;
+}
+
 .col-buttom{
   width: 100%;
   height: 30px;
   flex-shrink: 0;
   margin: 0 auto;
   padding: 0 20px; 
+}
+.download{
+  color: #717171;
+}
+.download img{
+  filter: invert(30%);
+}
+.download:hover img{
+  filter: invert(0);
+}
+.download:hover{
+  color: white;
+  cursor: pointer;
 }
 .barra{
   width: 100%;
@@ -139,7 +194,6 @@ h2{
 }
 
 
-
 .upgrade{
   position: fixed;
   flex-direction: row-reverse;
@@ -147,16 +201,20 @@ h2{
   right: 0;
   align-items: center;
   height: 90px;
-  width: calc(100% - 230px);
-  background-color: rgba(0, 0, 0, 0.5)
+  width: calc(100vw - 230px);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .upgrade a{
   text-decoration: none;
   padding: 10px 30px;
   color: white;
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 20px;
-  margin-right: 20px;
+  margin-right: 30px;
+}
+.upgrade a:hover{
+  font-size: 15px;
+  margin-right: 25px;
 }
 .musica{
   padding-top: 110px;
@@ -177,12 +235,6 @@ h2{
 
   position: relative;
 }
-
-
-/*.generi ul li a:hover{
-  border-bottom: 2px solid #ADFF2F;
-  border-length: 3px;
-}*/
 .generi ul li a.bottom::after{
   content: "";
   position: absolute;
@@ -223,7 +275,6 @@ h2{
   font-weight: bold;
   color: #7B7E82;
 }
-
 .image{
   position: relative;
 }
@@ -248,13 +299,10 @@ h2{
   cursor: pointer;
 }
 
-
-
 /*MENU BOTTOM*/
 .menu-bottom{
   justify-content: space-between;
   flex-shrink: 0;
-  position: fixed;
   width: 100%;
   height: 90px;
   background-color: #282828;
@@ -267,20 +315,30 @@ h2{
 .immagine img{
   width: 100%;
 }
+.text p:hover{
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+}
 .icon-heart{
   padding-left: 35px;
   padding-right: 20px;
 }
+.traccia i:hover{
+  color: white;
+}
 .pulsanti{
   justify-content: center;
+  padding-bottom: 10px;
 }
 .pulsanti i,
 .dx i{
   padding: 0 10px;
   color: white;
 }
-.tempo{
-  padding-top: 10px;
+.pulsanti i:nth-child(3n):hover{
+  font-size: 26px;
+  padding: 0 9px;  
 }
 .tempo span{
   padding: 0 20px;
@@ -297,6 +355,7 @@ h2{
   height: 3px;
   background-color: #5A5A5A;
   border-radius: 5px;
+  cursor: pointer;
 }
 .bar::before {
   content : "";
@@ -307,6 +366,27 @@ h2{
   width   : 30%;  
   border-bottom: 3px solid #C1C1C1;
 }
+.bar i{
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  left: 30%;
+  bottom: -5px;
+  display: none;
+}
+.tempo:hover .bar i{
+  display: block;
+}
+.tempo:hover .bar::before{
+  content : "";
+  position: absolute;
+  left    : 0;
+  bottom  : 0;
+  height  : 3px;
+  width   : 30%;  
+  border-bottom: 3px solid #15cf15;
+}
+
 .vol-bar{
   position: relative;
   z-index : 1;
@@ -320,11 +400,30 @@ h2{
   position: absolute;
   left    : 0;
   bottom  : 0;
-  height  : 3px;
+  height  : 4px;
   width   : 20%;  
   border-bottom: 4px solid #C1C1C1;
 }
-
+.vol-bar i{
+  position: absolute;
+  color: white;
+  font-size: 10px;
+  left: 8%;
+  bottom: -5px;
+  display: none;
+}
+.dx:hover .vol-bar i{
+  display: block;
+}
+.dx:hover .vol-bar::before{
+  content : "";
+  position: absolute;
+  left    : 0;
+  bottom  : 0;
+  height  : 4px;
+  width   : 20%;  
+  border-bottom: 4px solid #15cf15;
+}
 
 
 
