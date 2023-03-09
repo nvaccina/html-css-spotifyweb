@@ -303,6 +303,7 @@ h4{
 
 /*MENU BOTTOM*/
 .menu-bottom{
+  position: fixed;
   justify-content: space-between;
   flex-shrink: 0;
   width: 100%;
@@ -339,17 +340,19 @@ h4{
   justify-content: center;
   width: 100%;
 }
-.pulsanti i{
+.pulsanti{
   padding-bottom: 10px;
 }
-.pulsanti i,
-.dx i{
+.pulsanti i{
   padding: 0 10px;
   color: white;
 }
+.dx i{
+  padding: 0 5px;
+}
 .pulsanti i:nth-child(3n):hover{
   font-size: 26px;
-  padding: 0 9px 9px 0;  
+  padding: 0 9px;  
 }
 .tempo span{
   padding: 0 20px;
@@ -358,16 +361,19 @@ h4{
 .dx i{
   font-size: 12px;
 }
-.durata-bar{
+.center{
+  width: 40%;
+}
+.bar-durata{
   position: relative;
   z-index: 1;
-  width: 400px;
+  width: 100%;
   height: 3px;
   background-color: #5A5A5A;
   border-radius: 5px;
   cursor: pointer;
 }
-.durata-bar::before {
+.bar-durata::before {
   content: "";
   position: absolute;
   left: 0;
@@ -376,7 +382,7 @@ h4{
   width: 30%;  
   border-bottom: 3px solid #C1C1C1;
 }
-.durata-bar i{
+.bar-durata i{
   position: absolute;
   color: white;
   font-size: 10px;
@@ -384,10 +390,10 @@ h4{
   bottom: -5px;
   display: none;
 }
-.tempo:hover .durata-bar i{
+.tempo:hover .bar-durata i{
   display: block;
 }
-.durata-bar:hover .durata-bar::before{
+.tempo:hover .bar-durata::before{
   content: "";
   position: absolute;
   left: 0;
@@ -399,7 +405,7 @@ h4{
 .vol-bar{
   position: relative;
   z-index: 2;
-  width: 100px;
+  width: 90px;
   height: 4px;
   background-color: #5A5A5A;
   border-radius: 5px;
@@ -421,10 +427,10 @@ h4{
   bottom: -5px;
   display: none;
 }
-.dx:hover .vol-bar i{
+.vol:hover .vol-bar i{
   display: block;
 }
-.dx:hover .vol-bar::before{
+.vol:hover .vol-bar::before{
   content: "";
   position: absolute;
   left: 0;
@@ -445,9 +451,9 @@ h4{
     width: calc(100% / 4);
     padding-bottom: 30px;
   }
-  .tempo{
+  /*.tempo{
     max-width: 380px;
-  }
+  }*/
   .generi ul{
     display: flex;
     justify-content: center;
@@ -465,9 +471,6 @@ h4{
   }
   .row .col{
     width: calc(100% / 2);
-  }
-  .durata-bar{
-    width: 180px;
   }
   .small-icon ul{
     display: block;
@@ -488,7 +491,6 @@ h4{
   }
   .col-menu{
     width: 70px;
-    
   }
   .col-bottom{
     position: absolute;
@@ -505,8 +507,8 @@ h4{
   .container, .upgrade{
     width: calc(100vw - 70px);
   }
-  .durata-tempo{
-    width: 100px;
+  .traccia .center, .dx{
+    width: calc(100 / 3);
   }
 }
 
