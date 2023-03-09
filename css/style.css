@@ -70,12 +70,21 @@ i:hover{
 .width-20px{
   width: 20px;
 }
+.height-20px{
+  height: 20px;
+}
 /*color*/
 .grey{
   color: #717171;
 }
 .white{
   color: white;  
+}
+.border-yellow{
+  border-left: 3px solid #ADFF2F; 
+}
+.border-black{
+  border-left: 3px solid black;
 }
 
 /*MAIN CONTAINER*/
@@ -103,6 +112,7 @@ i:hover{
 }
 .logo-small{
   width: 30px;
+  height: 30px;
   display: none;
 }
 .icon-sx{
@@ -122,9 +132,6 @@ i:hover{
   text-decoration: none;
   padding-left: 20px;
   color: #6C6C6C;  
-}
-.border-yellow{
-  border-left: 3px solid #ADFF2F; 
 }
 .icon-sx ul li a:hover .icon-big{
   filter: invert(0);
@@ -159,16 +166,14 @@ h4{
 }
 .lista{
   overflow-y: auto;
-  height: calc(100vh - 510px);
+  height: calc(100vh - 490px);
 }
 .icon-sx.playlist .lista li{
   padding-top: 10px;
 }
-
-.col-buttom{
+.col-bottom{
   width: 100%;
-  height: 30px;
-  flex-shrink: 0;
+  flex-shrink: 1;
   margin: 0 auto;
   padding: 0 20px; 
 }
@@ -192,14 +197,14 @@ h4{
 .user img{
   background-color: #808080;
 }
-
-
+/*Container*/
 .upgrade{
   position: fixed;
   flex-direction: row-reverse;
+  z-index: 999;
   top: 0;
   right: 0;
-  align-items: center;
+  
   height: 90px;
   width: calc(100vw - 230px);
   background-color: rgba(0, 0, 0, 0.5);
@@ -327,15 +332,14 @@ h4{
   list-style: none;
   padding-right: 20px ;
 }
-/*.icon-heart{
-  padding-left: 35px;
-  padding-right: 20px;
-}*/
 .traccia i:hover{
   color: white;
 }
 .pulsanti{
   justify-content: center;
+  width: 100%;
+}
+.pulsanti i{
   padding-bottom: 10px;
 }
 .pulsanti i,
@@ -345,7 +349,7 @@ h4{
 }
 .pulsanti i:nth-child(3n):hover{
   font-size: 26px;
-  padding: 0 9px;  
+  padding: 0 9px 9px 0;  
 }
 .tempo span{
   padding: 0 20px;
@@ -354,26 +358,25 @@ h4{
 .dx i{
   font-size: 12px;
 }
-
-.bar{
+.durata-bar{
   position: relative;
-  z-index : 1;
+  z-index: 1;
   width: 400px;
   height: 3px;
   background-color: #5A5A5A;
   border-radius: 5px;
   cursor: pointer;
 }
-.bar::before {
-  content : "";
+.durata-bar::before {
+  content: "";
   position: absolute;
-  left    : 0;
-  bottom  : 0;
-  height  : 3px;
-  width   : 30%;  
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30%;  
   border-bottom: 3px solid #C1C1C1;
 }
-.bar i{
+.durata-bar i{
   position: absolute;
   color: white;
   font-size: 10px;
@@ -381,34 +384,33 @@ h4{
   bottom: -5px;
   display: none;
 }
-.tempo:hover .bar i{
+.tempo:hover .durata-bar i{
   display: block;
 }
-.tempo:hover .bar::before{
-  content : "";
+.durata-bar:hover .durata-bar::before{
+  content: "";
   position: absolute;
-  left    : 0;
-  bottom  : 0;
-  height  : 3px;
-  width   : 30%;  
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30%;  
   border-bottom: 3px solid #15cf15;
 }
-
 .vol-bar{
   position: relative;
-  z-index : 1;
+  z-index: 2;
   width: 100px;
   height: 4px;
   background-color: #5A5A5A;
   border-radius: 5px;
 }
 .vol-bar::before{
-  content : "";
+  content: "";
   position: absolute;
-  left    : 0;
-  bottom  : 0;
-  height  : 4px;
-  width   : 20%;  
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 20%;  
   border-bottom: 4px solid #C1C1C1;
 }
 .vol-bar i{
@@ -423,48 +425,48 @@ h4{
   display: block;
 }
 .dx:hover .vol-bar::before{
-  content : "";
+  content: "";
   position: absolute;
-  left    : 0;
-  bottom  : 0;
-  height  : 4px;
-  width   : 20%;  
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 20%;  
   border-bottom: 4px solid #15cf15;
 }
 
 
 
 /*RESPONSIVE*/
-
-@media all and (max-width:650px){
-  .col-menu{
-    width: 70px;
+@media all and (max-width:1100px){
+  .row{
+    flex-wrap: wrap;
   }
-  .logo-small{
-    display: block;
-  }
-  .logo-big,
-  .icon-sx .testo,
-  .playlist,
-  .icon-sx h4,
-  .download span,
-  .barra,
-  .user span{
-    display: none;
+  .row .col{
+    width: calc(100% / 4);
+    padding-bottom: 30px;
   }
   .tempo{
-    width: 100px;
+    max-width: 380px;
   }
+  .generi ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .generi ul li{
+    padding-bottom: 20px;
+  }
+
 }
 
-
-
-
 @media all and (max-width:760px){
+  .row{
+    flex-wrap: wrap;
+  }
   .row .col{
     width: calc(100% / 2);
   }
-  .bar{
+  .durata-bar{
     width: 180px;
   }
   .small-icon ul{
@@ -474,22 +476,38 @@ h4{
 }
 
 
-
-@media all and (max-width:1100px){
-  .row{
-    flex-wrap: wrap;
+@media all and (max-width:650px){
+  .logo-big,
+  .icon-sx .testo,
+  .playlist,
+  .col-menu h4,
+  .download span,
+  .barra,
+  .user span{
+    display: none;
   }
-  .row .col{
-    width: calc(100% / 4);
-    padding-bottom: 20px;
+  .col-menu{
+    width: 70px;
+    
   }
-  .tempo{
-    max-width: 380px;
+  .col-bottom{
+    position: absolute;
+    bottom: 90px;
   }
-  .generi{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  .logo-small{
+    display: block;
+    width: 45px;
+    padding-left: 20px;
   }
-
+  .icon-sx a{
+    border: none;
+  }
+  .container, .upgrade{
+    width: calc(100vw - 70px);
+  }
+  .durata-tempo{
+    width: 100px;
+  }
 }
+
+
